@@ -63,6 +63,7 @@ const useStyles = createUseStyles(
 		sort: {
 			border: "none",
 			color: theme.textAccent,
+			cursor: "pointer",
 		},
 		label: {
 			cursor: "pointer",

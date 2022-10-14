@@ -1,4 +1,3 @@
-import axios from "axios";
 import {useState, useEffect} from "react";
 import {CardData} from "../components/Card";
 
@@ -32,8 +31,9 @@ export const useFetch = (url: string) => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const response = await axios.request({url});
-			setData(response.data);
+			const response = await fetch(url);
+			const result = await response.json();
+			setData(result);
 		}
 
 		fetchData();
@@ -41,7 +41,7 @@ export const useFetch = (url: string) => {
 	return data;
 };
 
-interface CardDataFromApi {
+export interface CardDataFromApi {
 	id: number;
 	author: string;
 	title: string;
@@ -50,5 +50,5 @@ interface CardDataFromApi {
 		portrait: string[];
 		landscape: string[];
 	}[];
-	likes: 2;
+	likes: number;
 }

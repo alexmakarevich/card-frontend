@@ -94,7 +94,7 @@ export const Card = ({
 
 	return (
 		<li className={card}>
-			{/** TODO: would be cool to get different imgs for items */}
+			{/** would be cool to get different imgs for items */}
 			<div className={contentImage} role={"img"} />
 			<div className={authorArea}>
 				<Avatar {...authorName} />
