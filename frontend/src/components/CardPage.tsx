@@ -87,7 +87,7 @@ const sortOptions = [
 
 const pickSorter = (sortOpt: typeof sortOptions[number]["key"]): ((a: CardData, b: CardData) => number) =>
 	sortOpt === "unsorted"
-		? () => 1
+		? (a, b) => a.id - b.id
 		: sortOpt === "authorZA"
 		? (a, b) => a.authorName.last.localeCompare(b.authorName.last)
 		: sortOpt === "authorAZ"
